@@ -1,0 +1,19 @@
+{% extends "base.html" %}
+
+{% block title %}Resultados{% endblock %}
+
+{% block content %}
+<div class="results-container">
+    <h2>Resultados del Diagnóstico</h2>
+    <p class="subtitle">Tu bienestar comienza con entender tus resultados</p>
+
+    <div class="results-grid">
+        {% for clave, datos in resultados.items() %}
+        <div class="result-item">
+            <h3 class="result-title">{{ datos[0] }}</h3>
+            <p class="result-description">{{ datos[1] }}</p>
+        </div>
+        {% endfor %}
+    </div>
+</div>
+{% endblock %}
