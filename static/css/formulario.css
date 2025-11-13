@@ -1,0 +1,170 @@
+body {
+    background-color: #f4f4f4;
+    font-family: Arial, sans-serif;
+}
+
+.form-container {
+    max-width: 800px;
+    margin: 40px auto;
+    padding: 30px;
+    background-color: #ffffff;
+    border-radius: 8px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+h2 {
+    color: #007bff;
+    border-bottom: 2px solid #eee;
+    padding-bottom: 10px;
+    margin-bottom: 20px;
+    font-size: 2em;
+    font-weight: bold;
+}
+
+h3 {
+    color: #333;
+    margin-top: 30px;
+    margin-bottom: 15px;
+    font-size: 1.4em;
+    font-weight: bold;
+}
+
+/* Fila para una sola columna (por defecto ocupará el 100% del contenedor) */
+.form-group {
+    margin-bottom: 20px;
+    padding-bottom: 15px;
+    border-bottom: 1px dotted #e9e9e9;
+}
+
+/* Fila para múltiples columnas (usa Flexbox) */
+.form-group-row {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    gap: 20px; /* Espacio entre las columnas */
+    margin-bottom: 20px;
+    padding-bottom: 15px;
+    border-bottom: 1px dotted #e9e9e9;
+    align-items: stretch;
+}
+
+/* Cada campo dentro de una fila de múltiples columnas */
+.form-field {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+}
+
+/* --- Estilos de Campos --- */
+label {
+    display: block;
+    font-weight: 600;
+    color: #555;
+    margin-bottom: 8px;
+}
+
+/* Estilo para todos los inputs y selects */
+input[type='number'],
+input[type='text'],
+select,
+.form-group input { /* Aplica también a inputs en form-group */
+    width: 100%;
+    padding: 10px 15px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box;
+    font-size: 1em;
+    color: #333;
+    background-color: #f9f9f9;
+    transition: border-color 0.3s;
+}
+
+input:focus,
+select:focus {
+    border-color: #007bff;
+    outline: none;
+    background-color: #fff;
+}
+
+::placeholder {
+    color: #aaa;
+}
+
+/* --- Estilos específicos para Radios --- */
+.radio-group {
+    display: flex;
+    align-items: center; /* Alinea verticalmente la etiqueta principal */
+}
+
+.radio-group > label:first-child {
+    flex-basis: 250px; /* Da un ancho fijo a la label principal */
+    margin-bottom: 0;
+}
+
+.radio-options {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+}
+
+.radio-options label {
+    display: inline;
+    font-weight: normal; /* Etiquetas de radio más ligeras */
+    margin-bottom: 0;
+}
+
+.radio-options input[type='radio'] {
+    width: auto;
+    margin-right: 5px;
+}
+
+
+/* --- Estilos de Botones --- */
+.form-buttons {
+    margin-top: 30px;
+    margin-left: 95px;
+    padding-top: 20px;
+}
+
+.form-buttons button {
+    padding: 12px 25px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-weight: bold;
+    font-size: 1.1em;
+    margin-right: 15px;
+    transition: background-color 0.3s;
+}
+
+button[type="submit"] {
+    background-color: #28a745;
+    color: white;
+}
+
+button[type="reset"] {
+    background-color: #dc3545;
+    color: white;
+}
+
+/* Media Query para pantallas pequeñas (rompe el Flexbox y apila) */
+@media (max-width: 650px) {
+    .form-group-row {
+        flex-direction: column;
+        gap: 0;
+    }
+    .form-field {
+        margin-bottom: 15px;
+    }
+    .form-container {
+        padding: 15px;
+        margin: 10px auto;
+    }
+    .radio-group {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+    .radio-group > label:first-child {
+        margin-bottom: 10px;
+    }
+}

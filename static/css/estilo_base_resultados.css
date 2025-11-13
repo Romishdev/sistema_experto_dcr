@@ -1,0 +1,200 @@
+body {
+    font-family: 'Segoe UI', sans-serif;
+    background-color: #f8f9fa;
+}
+
+
+.hero {
+    background: url('/static/imagenes/fondo_10.png')
+    center/cover no-repeat;
+    color: white;
+    text-align: center;
+    padding: 5rem 1rem;
+    position: relative;
+}
+
+.hero::after {
+    content: "";
+    position: absolute;
+    top: 0; left: 0; width: 100%; height: 100%;
+    background: rgba(0, 80, 120, 0.6);
+    z-index: 0;
+}
+
+.hero h1 {
+    position: relative;
+    z-index: 1;
+    font-family: 'AlfaSlabOne', Arial, sans-serif;
+    font-size: 2.9em;
+}
+
+/* Sección principal */
+.main-section {
+    display: block;
+    /*justify-content: center;*/
+    /*align-items: center;*/
+    padding: 3rem 1rem;
+    text-align: center;
+
+    background-image: url('/static/imagenes/fondo_14.png'); /* <--- CAMBIA ESTO */
+    background-size: cover; /* Cubre todo el área sin distorsionar la imagen */
+    background-position: center center; /* Centra la imagen */
+    background-repeat: no-repeat; /* Evita que la imagen se repita */
+    background-attachment: fixed;
+}
+
+/* Caja de formulario o contenido */
+.login-box {
+    background-color: #ffffff;
+    padding: 2rem;
+    border-radius: 15px;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+    max-width: 400px;
+}
+
+.login-box h3 {
+    color: #004d61;
+    margin-bottom: 1rem;
+}
+
+/* Sección de contacto */
+.contact-section {
+    background-color: #3f5c5b;
+    color: white;
+    text-align: center;
+    padding: 2rem;
+}
+
+/* Footer */
+footer {
+    background-color: #2d2d2d;
+    color: #bdbdbd;
+    text-align: center;
+    padding: 1rem 0;
+    font-size: 0.9rem;
+}
+
+/* --- Estilos de la Barra de Navegación de Aplicación --- */
+
+.app-navbar {
+    background-color: #333; /* Color de fondo oscuro (similar al de Nicepage) */
+    width: 100%;
+    padding: 0 20px; /* Padding a los lados */
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+
+    font-family: 'PlayfairDisplay', Arial, sans-serif;
+
+
+    /* Configuración clave de Flexbox */
+    display: flex;
+    align-items: center; /* Alineación vertical */
+    justify-content: space-between; /* Distribuye espacio entre las tres secciones */
+    height: 50px; /* Altura fija para la barra */
+}
+
+/* --- 1. Sección Izquierda: Logo --- */
+.nav-left .logo {
+    color: #8afff7; /* Color de acento amarillo/naranja para el logo */
+    font-size: 1.5em;
+    font-weight: bold;
+    text-decoration: none;
+    padding: 0;
+
+    /* PROPIEDADES CLAVE PARA ALINEACIÓN */
+    display: flex; /* Habilita Flexbox */
+    align-items: center; /* Centra verticalmente el ícono y el texto */
+    gap: 8px; /* Pequeño espacio entre el ícono y el texto */
+}
+
+/* --- Estilo para el Ícono --- */
+.logo-icon {
+    height: 30px; /* Define la altura (ajusta según el tamaño deseado) */
+    width: auto;
+    /* Esto asegura que la imagen no tenga un padding extraño y se alinee */
+    margin-right: 0;
+}
+
+/* --- 2. Sección Central: Enlaces Principales --- */
+.nav-center {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex; /* Asegura que los ítems centrales estén en línea */
+}
+
+.nav-center li {
+    margin: 0 15px;
+}
+
+.nav-center a {
+    color: white;
+    text-decoration: none;
+    padding: 15px 0; /* Padding vertical para que el enlace sea clicable */
+    font-size: 1.4em;
+    font-weight: bold;
+    transition: color 0.2s;
+}
+
+.nav-center a:hover {
+    color: #ffc107; /* Resaltar al pasar el ratón */
+}
+
+/* Estilo para el enlace activo (opcional, si quieres destacarlo aún más) */
+.nav-center a.active {
+    color: #8afff7;
+    border-bottom: 2px solid #3ffafd;
+}
+
+/* --- 3. Sección Derecha: Usuario y Cerrar Sesión --- */
+.nav-right {
+    display: flex;
+    align-items: center;
+    gap: 15px; /* Espacio entre el nombre y el botón */
+}
+
+.user-name {
+    color: #dcdcdc; /* Color claro para el nombre de usuario */
+    font-weight: bold;
+    font-size: 1em;
+}
+
+.logout-button {
+    background-color: #dc3545; /* Rojo para el botón de cerrar sesión */
+    color: white;
+    font-weight: bold;
+    text-decoration: none;
+    padding: 8px 12px;
+    border-radius: 4px;
+    font-size: 1em;
+    transition: background-color 0.2s;
+}
+
+.logout-button:hover {
+    background-color: #c82333;
+}
+
+
+/* Fuentes del Proyecto */
+@font-face {
+    font-family: 'AlfaSlabOne';
+    src: url('/static/fonts/AlfaSlabOne-Regular.woff2') format('woff2'),
+    url('/static/fonts/AlfaSlabOne-Regular.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'DancingScript';
+    src: url('/static/fonts/DancingScript-Regular.woff2') format('woff2'),
+    url('/static/fonts/DancingScript-Regular.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'PlayfairDisplay';
+    src: url('/static/fonts/PlayfairDisplay-Regular.woff2') format('woff2'),
+    url('/static/fonts/PlayfairDisplay-Regular.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}

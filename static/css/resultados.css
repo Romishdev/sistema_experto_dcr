@@ -1,0 +1,220 @@
+/*
+ * Sección de Contenedores Principales (Asegura el apilamiento vertical)
+ * Asume que el contenedor padre ahora usa display: block.
+ */
+.results-container {
+    /* La mayoría de los !important se eliminan al resolver el conflicto de Flexbox */
+    width: 100%;
+    max-width: 1100px;
+    margin: 40px auto; /* Centrar y añadir espacio */
+    box-sizing: border-box;
+    /* clear: both ya no es estrictamente necesario, pero se mantiene como seguro */
+    clear: both;
+    padding: 0 20px; /* Padding para evitar que el contenido se pegue a los bordes */
+}
+
+/* --- Estilos específicos de Resultados --- */
+.results-container {
+    /* Se añaden los estilos que solo aplican a esta sección */
+    padding: 30px 20px; /* Asegurar que el padding interno use 30px vertical */
+    background-color: #ffffff;
+    /* font-family: Arial, sans-serif; -> Es mejor definirlo globalmente, pero se mantiene si es específico */
+}
+
+.results-container h2 {
+    color: #333;
+    text-align: center;
+    font-size: 2.4em;
+    font-weight: bold;
+    margin-bottom: 10px;
+}
+
+.results-container p.subtitle {
+    text-align: center;
+    color: #555;
+    margin-bottom: 40px;
+    font-size: 1.1em;
+}
+
+/* --- Contenedor de las Tarjetas (Flexbox para las columnas) --- */
+.results-grid {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 30px;
+    justify-content: center;
+    padding: 20px 0;
+}
+
+/* --- Estilos para cada Tarjeta de Resultado --- */
+.result-item {
+    flex: 0 0 calc(33.333% - 20px);
+    min-width: 250px;
+
+    padding: 25px;
+    border: 1px solid #e0e0e0;
+    background-color: #EEFFFB;
+    border-radius: 4px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+
+    display: flex;
+    flex-direction: column;
+}
+
+.result-title {
+    color: #3C9AFD;
+    font-size: 1.1em;
+    font-weight: bold;
+    margin-top: 0;
+    margin-bottom: 15px;
+    padding-bottom: 10px;
+    border-bottom: 1px solid #e0e0e0;
+}
+
+.result-description {
+    color: #555;
+    font-size: 1em;
+    line-height: 1.6;
+    margin-top: 0;
+}
+
+/* --- Estilos de la Sección Preventivos (Ajustados al flujo vertical) --- */
+/* Esta sección sigue siendo un bloque que se apila con los resultados */
+.section-preventivos {
+    width: 100%;
+    max-width: 1200px;
+    margin: 40px auto;
+    box-sizing: border-box;
+    clear: both;
+    padding: 0 20px;
+    /* Puedes añadir padding o un fondo si quieres que la "tarjeta" de datos sea visible */
+    /* background-color: #f0f0f0; */
+    /* border-radius: 8px; */
+    /* box-shadow: 0 2px 5px rgba(0,0,0,0.1); */
+}
+
+.section-preventivos h2 {
+    font-size: 4em;
+    font-weight: bold;
+    color: #000000;
+    margin-bottom: 40px;
+    text-align: center; /* Centrar el título de esta sección */
+}
+
+/* --- CONTENIDO DE PREVENTIVOS: VUELVE A SER FLEXBOX PARA IMAGEN + LISTA --- */
+.preventivos-content {
+    display: flex; /* <-- CLAVE: Ahora es un flex container */
+    gap: 30px; /* Espacio entre la imagen y la lista */
+    align-items: flex-start; /* Alinea los ítems al inicio (arriba) */
+    max-width: 1100px; /* Limita el ancho del contenido interno para centrarlo */
+    margin: 0 auto 30px auto; /* Centrar este bloque horizontalmente */
+    padding: 20px; /* Espacio interno si lo deseas */
+    background-color: #ffffff; /* Fondo para que destaque como una "caja" */
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+}
+
+/* Bloque de Imagen */
+.preventivos-image-wrapper {
+    flex: 0 0 45%; /* La imagen ocupa el 35% del ancho de .preventivos-content */
+    max-width: 750px; /* Establece un tamaño máximo razonable para la imagen */
+    overflow: hidden;
+    border-radius: 8px;
+}
+
+.preventivos-image {
+    width: 100%;
+    height: auto;
+    display: block;
+}
+
+/* Bloque de Detalles (Lista) */
+.preventivos-details {
+    flex: 1; /* La lista ocupa el espacio restante */
+    display: flex; /* Permite que el contenido interno de detalles también use flex */
+    flex-direction: column; /* Apila los elementos dentro de detalles si hubiera más */
+    justify-content: center; /* Centra el contenido verticalmente si el otro lado es más alto */
+}
+
+/* --- Estilo de la Lista (Mantenido) --- */
+.preventivos-list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.preventivos-list li {
+    font-size: 1em;
+    font-weight: bold;
+    color: #2f5958;
+    margin-bottom: 10px;
+    padding-left: 20px;
+    position: relative;
+    text-align: left;
+}
+
+.preventivos-list li::before {
+    content: "•";
+    color: #ffc107;
+    font-weight: 900;
+    display: inline-block;
+    width: 1em;
+    margin-left: -1em;
+}
+
+/* --- Media Queries para Preventivos --- */
+@media (max-width: 900px) {
+    .preventivos-content {
+        flex-direction: column; /* Apila imagen y lista en pantallas pequeñas */
+        align-items: center; /* Centra los elementos apilados */
+        gap: 20px;
+        max-width: 90%; /* Ajusta el ancho para móviles */
+        padding: 15px;
+    }
+    .preventivos-image-wrapper {
+        flex: none; /* Deshabilita el flex para la imagen */
+        width: 100%; /* Ocupa todo el ancho disponible */
+        max-width: 300px; /* Limita el tamaño de la imagen */
+    }
+    .preventivos-details {
+        flex: none; /* Deshabilita el flex para los detalles */
+        width: 100%;
+        text-align: center; /* Centra el texto en móvil si lo deseas */
+    }
+    .preventivos-list li {
+        padding-left: 0; /* Elimina el padding para el viñeta si centras */
+        text-align: left; /* Asegura que la lista se alinee a la izquierda */
+        margin-left: auto; /* Centra la lista en el contenedor */
+        margin-right: auto;
+        max-width: 250px; /* Limita el ancho de la lista si es muy larga */
+    }
+    .preventivos-list li::before {
+        margin-left: -1em; /* Mantiene la viñeta fuera del texto centrado */
+    }
+}
+
+/* --- Media Queries --- */
+@media (max-width: 1000px) {
+    .result-item {
+        flex: 0 0 calc(50% - 15px);
+    }
+}
+
+@media (max-width: 600px) {
+    .results-container {
+        padding: 20px 15px;
+    }
+    .result-item {
+        flex: 0 0 100%;
+    }
+}
+
+/* --- Animación --- */
+.fade-item {
+    opacity: 0;
+    transform: translateY(20px);
+    transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+}
+
+.fade-item.is-visible {
+    opacity: 1;
+    transform: translateY(0);
+}

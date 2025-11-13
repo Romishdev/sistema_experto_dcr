@@ -1,15 +1,32 @@
-{% extends "base.html" %}
+{% extends "base_resultados.html" %}
 
 {% block title %}Resultados{% endblock %}
 
 {% block content %}
+<section class="section-preventivos">
+    <h2>Datos del Paciente</h2>
+    <div class="preventivos-content fade-item">
+        <div class="preventivos-image-wrapper">
+            <img src="/static/imagenes/image_2.png" alt="Imagen del Médico" class="preventivos-image">
+        </div>
+
+        <div class="preventivos-details">
+            <ul class="preventivos-list">
+                {% for (clave_A, valor_A), (clave_B, valor_B) in datos_paciente %}
+                    <li>{{ valor_A }}: {{ valor_B }}</li>
+                {% endfor %}
+            </ul>
+        </div>
+    </div>
+</section>
+
 <div class="results-container">
     <h2>Resultados del Diagnóstico</h2>
     <p class="subtitle">Tu bienestar comienza con entender tus resultados</p>
 
     <div class="results-grid">
         {% for clave, datos in resultados.items() %}
-        <div class="result-item">
+        <div class="result-item fade-item">
             <h3 class="result-title">{{ datos[0] }}</h3>
             <p class="result-description">{{ datos[1] }}</p>
         </div>

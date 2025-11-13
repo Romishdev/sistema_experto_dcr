@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Acceso al Sistema</title>
+    <link rel="stylesheet" href="/static/css/estilo_login.css">
+</head>
+<body>
+    <div class="background-overlay">
+        <div class="login-card">
+            <h1 class="card-title">Accede a DiagnoSmart</h1>
+            <p class="card-subtitle">¡La inteligencia clínica comienza aquí!</p>
+
+            <form id="login-form" action="/iniciar-sesión" method="POST">
+
+                <div class="form-group">
+                    <label for="username">Usuario o Email</label>
+                    <input type="text" id="username" name="username" placeholder="Nombre de usuario" required>
+                </div>
+
+                <div class="form-group">
+                    <label for="password">Contraseña</label>
+                    <input type="password" id="password" name="password" placeholder="Ingresa tu contraseña" required>
+                </div>
+
+                <button type="submit" class="login-button">ACCEDER</button>
+            </form>
+        </div>
+    </div>
+</body>
+</html>

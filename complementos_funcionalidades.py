@@ -45,3 +45,28 @@ alarmas = {
         'Derivar a urgencias inmediata. Atención hospitalaria urgente, soporte vital avanzado.'
     ]
 }
+
+
+orden_claves = [
+    "edad",
+    "comb",
+    "fiebre",
+    "duracion_fiebre",
+    "tos",
+    "duracion_tos",
+    "dolorpecho",
+    "sintomas",
+    "oxigeno",
+    "frec_resp",
+    "frecresp_c",
+    "frecresp_c_tiempo",
+    "pcr",
+    "pcr_aum",
+    "pcr_aum_tiempo",
+    "radiografia",
+    "rad_tiempo",
+    "expo_reciente",
+    "expo_reciente_tipo",
+    "senales_alarma"
+]
+

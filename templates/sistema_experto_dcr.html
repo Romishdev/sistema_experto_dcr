@@ -6,37 +6,47 @@
 <div class="form-container">
     <h2>Diagnóstico Clínico Respiratorio</h2>
     <form action="/sistema-experto-diagnostico-clinico-respiratorio" method="POST">
-        <h3>Datos generales del paciente</h3>
-        <div>
-            <label for='edad_paciente'>Edad:</label>
-            <input name='edad' id='edad_paciente' type='number' min='1' step='1' placeholder='Edad'>
 
-            <label for='comorbilidad_paciente'>Comorbilidad:</label>
-            <input name='comorbilidad' id='comorbilidad_paciente' type="number" min='0' step='1' placeholder="Ejemplo: 1">
+        <h3>Datos generales del paciente</h3>
+        <div class="form-group-row">
+            <div class="form-field">
+                <label for='edad_paciente'>Edad:</label>
+                <input name='edad' id='edad_paciente' type='number' min='1' step='1' placeholder='Edad' required>
+            </div>
+            <div class="form-field">
+                <label for='comorbilidad_paciente'>Comorbilidad:</label>
+                <input name='comorbilidad' id='comorbilidad_paciente' type="number" min='0' step='1' placeholder="Ejemplo: 1" required>
+            </div>
         </div>
 
         <h3>Síntomas principales</h3>
-        <div>
-            <label for='temp_paciente'>Temperatura (°C):</label>
-            <input name='temperatura' id='temp_paciente' type='number' min='0' step='0.1' placeholder='Ejemplo: 38'>
-
-            <label for='duracion_fbre'>Duracion de la fiebre:</label>
-            <input name='duracion_fiebre' id='duracion_fbre' type='number' min='0' step='1' placeholder='Días'>
+        <div class="form-group-row">
+            <div class="form-field">
+                <label for='temp_paciente'>Temperatura (°C):</label>
+                <input name='temperatura' id='temp_paciente' type='number' min='0' step='0.1' placeholder='Ejemplo: 38' required>
+            </div>
+            <div class="form-field">
+                <label for='duracion_fbre'>Duracion de la fiebre:</label>
+                <input name='duracion_fiebre' id='duracion_fbre' type='number' min='0' step='1' placeholder='Días' required>
+            </div>
         </div>
 
-        <div>
-            <label for='tos_paciente'>Tos:</label>
-            <select name='tos' id='tos_paciente'>
-                <option value='tos seca'>Tos seca</option>
-                <option value='tos productiva'>Tos productiva</option>
-                <option value='tos espesa'>Tos espesa</option>
-            </select>
-
-            <label for='duracion_t'>Duracion de la tos:</label>
-            <input name='duracion_tos' id='duracion_t' type='number' min='0' step='1' placeholder='Días'>
+        <div class="form-group-row">
+            <div class="form-field">
+                <label for='tos_paciente'>Tos:</label>
+                <select name='tos' id='tos_paciente'>
+                    <option value='tos seca'>Tos seca</option>
+                    <option value='tos productiva'>Tos productiva</option>
+                    <option value='tos espesa'>Tos espesa</option>
+                </select>
+            </div>
+            <div class="form-field">
+                <label for='duracion_t'>Duracion de la tos:</label>
+                <input name='duracion_tos' id='duracion_t' type='number' min='0' step='1' placeholder='Días' required>
+            </div>
         </div>
 
-        <div>
+        <div class="form-group">
             <label for='dolorpecho_paciente'>Dolor en el pecho:</label>
             <select name='dolor_pecho' id='dolorpecho_paciente'>
                 <option value='sí'>Sí</option>
@@ -45,7 +55,7 @@
             </select>
         </div>
 
-        <div>
+        <div class="form-group">
             <label for='sintomas_paciente'>Síntomas:</label>
             <select name='sintomas' id='sintomas_paciente'>
                 <option value='leves'>Leves</option>
@@ -55,71 +65,84 @@
         </div>
 
         <h3>Signos vitales y función respiratoria</h3>
-        <div>
+        <div class="form-group">
             <label for='sato2_paciente'>Saturación de oxígeno (%):</label>
-            <input name='sat_oxg' id='sato2_paciente' type='number' min='0' max='100' step='1' placeholder='Ejemplo: 75'>
+            <input name='sat_oxg' id='sato2_paciente' type='number' min='0' max='100' step='1' placeholder='Ejemplo: 75' required>
         </div>
 
-        <div>
+        <div class="form-group">
             <label for='frecresp_paciente'>Frecuencia respiratoria (rpm):</label>
-            <input name='frec_resp' id='frecresp_paciente' type='number' min='0' step='1' placeholder='Ejemplo: 12'>
+            <input name='frec_resp' id='frecresp_paciente' type='number' min='0' step='1' placeholder='Ejemplo: 12' required>
         </div>
-        <div>
-            <label for='cambiofrecresp_paciente'>Cambio en la frecuencia respiratoria:</label>
-            <select name='cambio_frec_resp' id='cambiofrecresp_paciente'>
-                <option value='baja'>Baja</option>
-                <option value='normal'>Normal</option>
-                <option value='moderada'>Moderada</option>
-                <option value='aumentada'>Aumentada</option>
-            </select>
 
-            <label for='tiempo_cambiofrecresp'>Tiempo del cambio:</label>
-            <input name='duracion_cambio_frecresp' id='tiempo_cambiofrecresp' type='number' min='0' step='1' placeholder='Horas'>
+        <div class="form-group-row">
+            <div class="form-field">
+                <label for='cambiofrecresp_paciente'>Cambio en la frecuencia respiratoria:</label>
+                <select name='cambio_frec_resp' id='cambiofrecresp_paciente'>
+                    <option value='baja'>Baja</option>
+                    <option value='normal'>Normal</option>
+                    <option value='moderada'>Moderada</option>
+                    <option value='aumentada'>Aumentada</option>
+                </select>
+            </div>
+            <div class="form-field">
+                <label for='tiempo_cambiofrecresp'>Tiempo del cambio:</label>
+                <input name='duracion_cambio_frecresp' id='tiempo_cambiofrecresp' type='number' min='0' step='1' placeholder='Horas' required>
+            </div>
         </div>
 
         <h3>Exámenes complementarios</h3>
-        <div>
+        <div class="form-group">
             <label for='pcr_paciente'>Proteína C Reactiva (mg/L):</label>
-            <input name='pcr' id='pcr_paciente' type='number' min='0' step='0.1' placeholder='Ejemplo: 5'>
+            <input name='pcr' id='pcr_paciente' type='number' min='0' step='0.1' placeholder='Ejemplo: 5' required>
         </div>
 
-        <div>
-            <label for='aumento_pcr_paciente'>Aumento de la Proteína C Reactiva (%):</label>
-            <input name='aumento_pcr' id='aumento_pcr_paciente' type='number' min='0' max='100' step='1' placeholder='Ejemplo: 50'>
-
-            <label for='tiempo_aumento_pcr'>Tiempo del aumento del PCR:</label>
-            <input name='tiempo_aum_pcr' id='tiempo_aumento_pcr' type='number' min='0' step='1' placeholder='Horas'>
+        <div class="form-group-row">
+            <div class="form-field">
+                <label for='aumento_pcr_paciente'>Aumento de la Proteína C Reactiva (%):</label>
+                <input name='aumento_pcr' id='aumento_pcr_paciente' type='number' min='0' max='100' step='1' placeholder='Ejemplo: 50' required>
+            </div>
+            <div class="form-field">
+                <label for='tiempo_aumento_pcr'>Tiempo del aumento del PCR:</label>
+                <input name='tiempo_aum_pcr' id='tiempo_aumento_pcr' type='number' min='0' step='1' placeholder='Horas' required>
+            </div>
         </div>
 
-        <div>
-            <label for='radiografia_paciente'>Radiografía:</label>
-            <select name='radiografia' id='radiografia_paciente'>
-                <option value='normal'>Normal</option>
-                <option value='infiltrado'>Infiltrado</option>
-                <option value='condensacion'>Condensación</option>
-            </select>
-
-            <label for='cambioradiografia_paciente'>Cambio en la radiografía:</label>
-            <select name='cambio_radiografia' id='cambioradiografia_paciente'>
-                <option value='sin cambios'>Sin Cambios</option>
-                <option value='leves'>Leves</option>
-                <option value='empeoramiento'>Empeoramiento</option>
-            </select>
-
-            <label for='tiempo_cambio_rad'>Tiempo de cambio:</label>
-            <input name='tiempo_cambio_radiografia' id='tiempo_cambio_rad' type='number' min='0' step='1' placeholder='Horas'>
+        <div class="form-group-row form-group-triple">
+            <div class="form-field">
+                <label for='radiografia_paciente'>Radiografía:</label>
+                <select name='radiografia' id='radiografia_paciente'>
+                    <option value='normal'>Normal</option>
+                    <option value='infiltrado'>Infiltrado</option>
+                    <option value='condensacion'>Condensación</option>
+                </select>
+            </div>
+            <div class="form-field">
+                <label for='cambioradiografia_paciente'>Cambio en la radiografía:</label>
+                <select name='cambio_radiografia' id='cambioradiografia_paciente'>
+                    <option value='sin cambios'>Sin Cambios</option>
+                    <option value='leves'>Leves</option>
+                    <option value='empeoramiento'>Empeoramiento</option>
+                </select>
+            </div>
+            <div class="form-field">
+                <label for='tiempo_cambio_rad'>Tiempo de cambio:</label>
+                <input name='tiempo_cambio_radiografia' id='tiempo_cambio_rad' type='number' min='0' step='1' placeholder='Horas' required>
+            </div>
         </div>
 
         <h3>Contexto epidemiológico</h3>
-        <div>
+        <div class="form-group radio-group">
             <label>Exposición reciente</label>
-            <label for='exp_reciente_paciente_t'>Sí</label>
-            <input name='exp_reciente' id='exp_reciente_paciente_t' type='radio' value='sí' onchange='toggleSelect(true)'>
-            <label for='exp_reciente_paciente_f'>No</label>
-            <input name='exp_reciente' id='exp_reciente_paciente_f' type='radio' value='no' onchange='toggleSelect(false)'>
+            <span class="radio-options">
+                <input name='exp_reciente' id='exp_reciente_paciente_t' type='radio' value='sí' onchange='toggleSelect(true)'>
+                <label for='exp_reciente_paciente_t'>Sí</label>
+                <input name='exp_reciente' id='exp_reciente_paciente_f' type='radio' value='no' onchange='toggleSelect(false)' checked>
+                <label for='exp_reciente_paciente_f'>No</label>
+            </span>
         </div>
 
-        <div>
+        <div class="form-group">
             <label for='tipo_exp_paciente'>Tipo de exposición:</label>
             <select name='tipo_expo' id='tipo_exp_paciente' disabled>
                 <option value='desconocido'>Desconocido</option>
@@ -128,11 +151,12 @@
             </select>
         </div>
 
-        <div>
+        <div class="form-buttons">
             <button type="submit">Diagnosticar</button>
             <button type="reset">Reiniciar</button>
         </div>
     </form>
 </div>
 <script src='/static/js/funcionalidades.js'></script>
+<script src="/static/js/formulario.js"></script>
 {% endblock %}
